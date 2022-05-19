@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebTraSua.Models.DanhMuc>
+
+@{
+	ViewBag.Title = "Danh mục";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>Danh Mục</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Create New", "Create")
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<table class="table">
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.TenDM)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.MotaDM)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.NgayTao)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TrangThaiDM)
+						</th>
+						<th></th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.DisplayFor(modelItem => item.TenDM)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MotaDM)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.NgayTao)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TrangThaiDM)
+							</td>
+							<td>
+								@Html.ActionLink("Edit", "Edit", new { id = item.MaDM }) |
+								@Html.ActionLink("Details", "Details", new { id = item.MaDM }) |
+								@Html.ActionLink("Delete", "Delete", new { id = item.MaDM })
+							</td>
+						</tr>
+					}
+
+				</table>
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

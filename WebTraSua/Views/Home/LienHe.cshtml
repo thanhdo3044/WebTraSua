@@ -1,0 +1,24 @@
+﻿
+@{
+	ViewBag.Title = "LienHe";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Public/css/LienHe.css" rel="stylesheet" />
+<div class="container">
+	<div class="row py-4">
+		<div class="col-md-6 map-lh">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d59567.858069152564!2d105.73530909180337!3d21.07301650931674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m5!1s0x31345522c2c40fdb%3A0xf09734667a0bd56!2zQuG6r2MgVOG7qyBMacOqbSwgSMOgIE7hu5lp!3m2!1d21.0730201!2d105.7703287!4m0!5e0!3m2!1svi!2s!4v1652371692629!5m2!1svi!2s" width="600" height="660" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+
+		<div class="col-md-6 call-shop">
+			<h1>Hay gửi những yêu cầu của bạn cho chúng tôi</h1>
+			<p>Hay liên hệ ngay với chúng tôi nếu phục vụ hay sản phẩm không phù hợp với bạn </p>
+			<input type="text" placeholder="Họ và tên" id="hotenKH" /><br />
+			<input type="email" placeholder="Email" id="email" /><br />
+			<input type="number" placeholder="Điện thoại" id="soDT" /><br />
+			<textarea name="comment" placeholder="Nội dung"></textarea><br />
+			<button type="button" class="btn btn-secondary">Gửi thông tin</button>
+		</div>
+	</div>
+</div>

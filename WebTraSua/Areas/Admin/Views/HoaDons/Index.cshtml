@@ -1,0 +1,91 @@
+﻿@model IEnumerable<WebTraSua.Models.HoaDon>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>BẢNG HÓA ĐƠN</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Create New", "Create")
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.MaND)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TenHD)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.ThoiGianHD)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TrangThaiHD)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.DiaChiaHD)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.SoDienThoaiHD)
+						</th>
+						<th></th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.DisplayFor(modelItem => item.MaND)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TenHD)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.ThoiGianHD)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TrangThaiHD)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.DiaChiaHD)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.SoDienThoaiHD)
+							</td>
+							<td>
+								@Html.ActionLink("Edit", "Edit", new { id = item.MaHD }) |
+								@Html.ActionLink("Details", "Details", new { id = item.MaHD }) |
+								@Html.ActionLink("Delete", "Delete", new { id = item.MaHD })
+							</td>
+						</tr>
+					}
+
+				</table>
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+

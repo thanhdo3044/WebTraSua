@@ -1,0 +1,125 @@
+﻿
+@{
+	ViewBag.Title = "MuaHang";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/Public/css/MuaHang.css" rel="stylesheet" />
+<style type="text/css">
+	.img-sup {
+		width: 90px;
+		height: 90px;
+	}
+
+	.content-mh h5 {
+		font-size: 50px;
+	}
+
+	#text-box {
+		width: 100px;
+	}
+</style>
+<div class="container">
+	<div class="row py-3">
+		<div class="col-7">
+			<div class="row">
+				<div class="col-sm-10">
+					<div class="card">
+						<div class="card-body">
+							<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="img-fluid card-img-top" alt="Chocolate-Toffee" id="img-shop" />
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 py-2">
+					<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="img-fluid img-sup" alt="Chocolate-Toffe" />
+					<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="img-fluid img-sup" alt="Chocolate-Toffe" />
+				</div>
+			</div>
+		</div>
+		<div class="col-5 text-white content-mh py-4">
+			<h5>Chocolate ToffeChocolate-Toffe</h5>
+			<i>Mô tả sản phẩm</i>
+			<div class="buttons_added">
+				<input type="button" class="btn btn-secondary" value="+" />
+				<input type="text" class="input-group-sm" value="1" id="text-box" />
+				<input type="button" class="btn btn-secondary" value="-" />
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<div class="container py-4  ">
+	<h2 class="text-center text-white">SẢN PHẨM BẠN CÓ THỂ LỰU CHỌN CÙNG</h2>
+	<div class="row row-cols-1 row-cols-md-6 g-4">
+		<div class="col">
+			<div class="card text-dark bg-light carousel-inner">
+				<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="card-img-top size-sp" alt="Chocolate-Toffee">
+				<div class="card-body">
+					<h5 class="card-title">Chocolate-Toffee</h5>
+					<p class="card-text">Giá : 50.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card text-dark bg-light">
+				<img src="~/Public/images/img tea-mi/Mango-Milktea.png" class="card-img-top size-sp" alt="MangoMilkte">
+				<div class="card-body">
+					<h5 class="card-title">MangoMilkte</h5>
+					<p class="card-text">Giá : 80.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card text-dark bg-light">
+				<img src="~/Public/images/img tea-mi/Okinawa-Milk-Foam-Smoothie.png" class="card-img-top size-sp" alt="Okinawa-Milk-Foam-Smoothie">
+				<div class="card-body">
+					<h5 class="card-title">Okinawa Milk</h5>
+					<p class="card-text">Giá : 60.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card text-dark bg-light">
+				<img src="~/Public/images/img tea-mi/Strawberry-milk-tea.png" class="card-img-top size-sp" alt="Strawberry milk tea">
+				<div class="card-body">
+					<h5 class="card-title">Strawberry milk</h5>
+					<p class="card-text">Giá : 70.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card text-dark bg-light">
+				<img src="~/Public/images/img tea-mi/tra-sua-creme-brulee.png" class="card-img-top size-sp" alt="creme brulee">
+				<div class="card-body">
+					<h5 class="card-title">Creme Brulee</h5>
+					<p class="card-text">Giá : 50.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card text-dark bg-light">
+				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+				<div class="card-body">
+					<h5 class="card-title">Tra Sua Dao</h5>
+					<p class="card-text">Giá: 40.000 VND</p>
+					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebTraSua.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTenND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinhND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoDienThoaiND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiND)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTenND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinhND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoDienThoaiND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiND)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaND }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaND }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaND })
+        </td>
+    </tr>
+}
+
+</table>

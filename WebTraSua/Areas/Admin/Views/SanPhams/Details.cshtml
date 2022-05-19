@@ -1,0 +1,96 @@
+﻿@model WebTraSua.Models.SanPham
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>Ten Danh Muc</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Back to List", "Index")
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<dl class="dl-horizontal">
+					<dt>
+						@Html.DisplayNameFor(model => model.DanhMuc.TenDM)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.DanhMuc.TenDM)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.TenSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.TenSP)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.MotaSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.MotaSP)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.GiaBanSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.GiaBanSP)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.ChiTietSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.ChiTietSP)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.TrangThaiSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.TrangThaiSP)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.KhuyenMaiSP)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.KhuyenMaiSP)
+					</dd>
+
+				</dl>
+				@Html.ActionLink("Edit", "Edit", new { id = Model.MaSP })
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

@@ -1,0 +1,59 @@
+﻿@model WebTraSua.Models.TinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TinTuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh.DuongDan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh.DuongDan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDungTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDungTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDeTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDeTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotaTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotaTT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

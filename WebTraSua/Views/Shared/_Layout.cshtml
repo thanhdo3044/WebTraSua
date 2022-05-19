@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@Page.Title</title>
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Public/css/Layout.css" rel="stylesheet" />
+	@RenderSection("header", required: false)
+</head>
+<body>
+	<section class="header clearfix">
+		<div class="navbar bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1">
+						<a href=""><img src="~/Public/images/logo/ThanhDo-logo.png" alt="Logo" class="logo img-fluid" /> </a>
+					</div>
+					<div class="col-md-6">
+						<ul class="nav bg-white justify-content-start">
+							<li class="nav-item">
+								@Html.ActionLink("Trang chủ", "TrangChu", "Home", new { @class = "nav-link text-black" })
+
+							</li>
+							<li class="nav-item">
+								@Html.ActionLink("Giới thiệu", "GioiThieu", "Home", new { @class = "nav-link text-black" })
+							</li>
+							<li class="nav-item dropdown">
+								@Html.ActionLink("Sản Phẩm", "SanPham", "Home", new { @class = "text-black nav-link dropdown-toggle	" })
+								<ul class="dropdown-content dropdown-menu-dark">
+									<li><a class="dropdown-item" href="#">Trà sữa</a></li>
+									<li><a class="dropdown-item" href="#">Trà hoa quả</a></li>
+									<li><a class="dropdown-item" href="#">Bánh kem</a></li>
+									<li><a class="dropdown-item" href="#">Hoa quả</a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								@Html.ActionLink("Tin tức", "TinTuc", "Home", new { @class = "nav-link text-black" })
+							</li>
+							<li class="nav-item text-black">
+								@Html.ActionLink("Liên Hệ", "LienHe", "Home", new { @class = "nav-link text-black" })
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-5">
+						<ul class="nav bg-white justify-content-end">
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="#">
+									Đăng nhập
+								</a>
+
+							</li>
+							<li class="nav-item"><a class="nav-link text-black">||</a></li>
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="#">
+									Đăng ký
+								</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="https://www.facebook.com/login.php">
+									<img src="~/Public/images/icon/facebook.png" alt="facebook" class="img-fluid icon-nav " />
+								</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dgo-to-account-button&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+									<img src="~/Public/images/icon/google.png" alt="google" class="icon-nav img-fluid" />
+								</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="#">
+									<img src="~/Public/images/icon/user.png" alt="user" class="icon-nav img-fluid" />
+								</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link text-black" href="#">
+									<img src="~/Public/images/icon/shopping.png" alt="user" class="icon-nav img-fluid" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="maincontent clearfix">
+		@RenderBody()
+	</section>
+
+	<section class="footer clearfix bg-white text-black py-5">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-3">
+					<p><b>Cửa hàng của chúng tôi</b></p>
+					<p>Chúng tôi mong muốn MilkTea ThanhDo sẽ trở thành nơi mọi người xích lại gần nhau và tìm thấy niềm vui, sự sẻ chia thân tình bên những tách cà phê đượm hương, chất lượng.s</p>
+				</div>
+				<div class="col-md-5">
+					<p><b>Liên hệ với chúng tôi</b></p>
+					<p>
+						<img src="~/Public/images/icon/map-marker.png" alt="Map" align="left" class="img-fluid icon-nav" />
+						Đại Thịnh -Mê Linh - Hà Nội
+					</p>
+					<p>
+						<img src="~/Public/images/icon/map-marker.png" alt="Map" align="left" class="img-fluid icon-nav" />
+						Đại Học Công Nghiệp Hà Nội-Bắc Từ Liên - Hà Nội
+					</p>
+				</div>
+				<div class="col-md-4">
+					<p><b>Đăng ký để nhận nhưng ưu đãi cho khách hàng </b></p>
+					<div class="input-group mb-4">
+						<input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
+						<button class="btn btn-outline-dark" type="button" id="button-addon2">Đăng Ký</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<section class="copyright clearfix bg-white text-black">
+		<div class="container border-top border-secondary">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					Sản phẩm được sinh viên Phạm Thành Đô thực hiện ||
+					Facebook: <a href="https://www.facebook.com/phamthanhdo3004/" class="face btn-link ">Phạm Thành Đô</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+	@RenderSection("footer", required: false)
+</body>
+</html>

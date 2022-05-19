@@ -1,0 +1,94 @@
+﻿@model WebTraSua.Models.HoaDon
+
+@{
+	ViewBag.Title = "Delete";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+
+		<!-- Main content -->
+		<section class="content my-5">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+
+					<div class="row">
+						<div class="col-md-6">
+							<strong>Ten Danh Muc</strong>
+						</div>
+						<div class="col-md-6 text-right">
+							@Html.ActionLink("Back to List", "Index")
+						</div>
+					</div>
+
+				</div>
+				<div class="card-body">
+					<dl class="dl-horizontal">
+						<dt>
+							@Html.DisplayNameFor(model => model.NguoiDung.HoTenND)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.NguoiDung.HoTenND)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.TenHD)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.TenHD)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.ThoiGianHD)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.ThoiGianHD)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.TrangThaiHD)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.TrangThaiHD)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.DiaChiaHD)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.DiaChiaHD)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.SoDienThoaiHD)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.SoDienThoaiHD)
+						</dd>
+
+					</dl>
+					<div class="form-actions no-color">
+						<input type="submit" value="Delete" class="btn btn-default" /> |
+
+					</div>
+				</div>
+			</div>
+			<!-- /.card -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+}
+

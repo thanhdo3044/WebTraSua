@@ -1,0 +1,110 @@
+﻿@model IEnumerable<WebTraSua.Models.SanPham>
+
+@{
+	ViewBag.Title = "Danh sách sản phẩm";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>Danh sách sản phẩm</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						<a class="btn btn-sm btn-primary" href="@Url.Action("Create","SanPhams")">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+							</svg> Thêm
+						</a>
+						<a class="btn btn-sm btn-danger" href="@Url.Action("Trush","SanPhams")">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+								<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+							</svg> Xóa
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.MaSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.MaDM)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TenSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.MotaSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.GiaBanSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.ChiTietSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TrangThaiSP)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.KhuyenMaiSP)
+						</th>
+						<th> </th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.DisplayFor(modelItem => item.MaSP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MaDM)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TenSP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.MotaSP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.GiaBanSP)
+							</td>
+
+							<td>
+								@Html.DisplayFor(modelItem => item.ChiTietSP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TrangThaiSP)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.KhuyenMaiSP)
+							</td>
+							<td>
+								<a class="btn btn-sm btn-primary" href="@Url.Action("Edit","SanPhams", new { id = item.MaSP })"> Sữa</a>
+								<a class="btn btn-sm btn-primary" href="@Url.Action("Details","SanPhams", new { id = item.MaSP })"> Chi tiết</a>
+								<a class="btn btn-sm btn-primary" href="@Url.Action("Delete","SanPhams", new { id = item.MaSP })">Xóa</a>
+							</td>
+						</tr>
+					}
+
+				</table>
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

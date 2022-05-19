@@ -1,0 +1,76 @@
+﻿@model WebTraSua.Models.BinhLuan
+
+@{
+	ViewBag.Title = "Delete";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+
+		<!-- Main content -->
+		<section class="content my-5">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+
+					<div class="row">
+						<div class="col-md-6">
+							<strong>Xóa bình luận</strong>
+						</div>
+						<div class="col-md-6 text-right">
+							@Html.ActionLink("Back to List", "Index")
+						</div>
+					</div>
+
+				</div>
+				<div class="card-body">
+					<dl class="dl-horizontal">
+						<dt>
+							@Html.DisplayNameFor(model => model.NguoiDung.HoTenND)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.NguoiDung.HoTenND)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.SanPham.MaDM)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.SanPham.MaDM)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.NoiDungBL)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.NoiDungBL)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.TrangThaiBL)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.TrangThaiBL)
+						</dd>
+
+					</dl>
+					<input type="submit" value="Delete" class="btn btn-default" />
+				</div>
+			</div>
+			<!-- /.card -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+}

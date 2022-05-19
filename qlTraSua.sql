@@ -1,0 +1,200 @@
+CREATE DATABASE QlTraSua
+
+CREATE TABLE SanPham(
+	MaSP VARCHAR(30) PRIMARY KEY,
+	MaDM VARCHAR(30) NOT NULL,
+	TenSP NVARCHAR(200),
+	MotaSP NVARCHAR(500),
+	GiaBanSP INTEGER,
+	ChiTietSP NVARCHAR(200),
+	TrangThaiSP NVARCHAR(50),
+	KhuyenMaiSP DATETIME
+)
+
+CREATE TABLE HoaDon(
+	MaHD VARCHAR(30) PRIMARY KEY,
+	MaND VARCHAR(30) NOT NULL,
+	TenHD VARCHAR(200),
+	ThoiGianHD DATETIME,
+	TrangThaiHD NVARCHAR(200),
+	DiaChiaHD NVARCHAR(200),
+	SoDienThoaiHD VARCHAR(200)
+)
+
+CREATE TABLE NguoiDung(
+	MaND VARCHAR(30) PRIMARY KEY,
+	HoTenND NVARCHAR(200),
+	GioiTinhND NVARCHAR(5),
+	EmailND VARCHAR(200),
+	SoDienThoaiND VARCHAR(200),
+	DiaChiND NVARCHAR(200)
+)
+
+CREATE TABLE TinTuc(
+	MaTT VARCHAR(30) PRIMARY KEY,
+	MaA VARCHAR(30) NOT NULL,
+	NoiDungTT NVARCHAR(500),
+	ThoiGianTT DATETIME ,
+	TieuDeTT NVARCHAR(200),
+	MotaTT NVARCHAR(200)
+)
+
+CREATE TABLE Anh(
+	MaA VARCHAR(30) PRIMARY KEY,
+	DuongDan VARCHAR(100),
+	ThoiGianA DATETIME ,
+)
+
+CREATE TABLE DanhMuc(
+	MaDM VARCHAR(30) PRIMARY KEY,
+	TenDM NVARCHAR(200),
+	MotaDM NVARCHAR(200),
+	NgayTao DATETIME ,
+	TrangThaiDM NVARCHAR(200),
+)
+
+CREATE TABLE NguyenLieu(
+	MaNL VARCHAR(30) PRIMARY KEY,
+	MaA VARCHAR(30) NOT NULL,
+	MaND VARCHAR(30) NOT NULL,
+	TenNL NVARCHAR(100),
+	SoLuong INTEGER,
+	ChatLuong NVARCHAR(30),
+	GiaMua FLOAT
+)
+CREATE TABLE ChiTietHD(
+	MaSP VARCHAR(30) NOT NULL,
+	MaHD VARCHAR(30) NOT NULL,
+	SoLuong INTEGER
+)
+
+CREATE TABLE BinhLuan(
+	MaSP VARCHAR(30) NOT NULL,
+	MaND VARCHAR(30) NOT NULL,
+	NoiDungBL NVARCHAR(300),
+	TrangThaiBL NVARCHAR(100),
+)
+
+CREATE TABLE AnhSP(
+	MaSP VARCHAR(30) NOT NULL,
+	MaA VARCHAR(30) NOT NULL,
+	TenASP NVARCHAR(100)
+)
+select*from AnhSP
+drop database QlTraSua
+
+ALTER TABLE SanPham ADD CONSTRAINT  fk1 FOREIGN KEY (MaDM) REFERENCES DanhMuc(MaDM);
+
+ALTER TABLE ChiTietHD ADD CONSTRAINT fk2 FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP);
+ALTER TABLE ChiTietHD ADD CONSTRAINT fk3 FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD);
+ALTER TABLE HoaDon ADD CONSTRAINT fk4 FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND);
+ALTER TABLE BinhLuan ADD CONSTRAINT fk5 FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP);
+ALTER TABLE BinhLuan ADD CONSTRAINT fk6 FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND);
+
+ALTER TABLE AnhSP ADD CONSTRAINT fk7 FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP);
+ALTER TABLE AnhSP ADD CONSTRAINT fk8 FOREIGN KEY (MaA) REFERENCES Anh(MaA);
+ALTER TABLE TinTuc ADD CONSTRAINT fk9 FOREIGN KEY (MaA) REFERENCES Anh(MaA);
+ALTER TABLE NguyenLieu ADD CONSTRAINT fk10 FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND);
+ALTER TABLE NguyenLieu ADD CONSTRAINT fk11 FOREIGN KEY (MaA) REFERENCES Anh(MaA);
+ALTER TABLE BinhLuan ADD CONSTRAINT pk12 PRIMARY KEY (MaSP, MaND);
+
+INSERT INTO SanPham (MaSP,MaDM,TenSP,MotaSP,GiaBanSP,ChiTietSP,TrangThaiSP,KhuyenMaiSP)
+VALUES
+('MaSP01','MaDM01','Tra Loai 1', 'Huong Vi Cam',5000,'Tra Thai Nguyen','Tra Loai 1','2022-02-06'),
+('MaSP02','MaDM02','Tra Loai 2', 'Huong Vi Dau',6000,'Tra Tay Bac','Tra Loai 2','2022-03-06'),
+('MaSP03','MaDM03','Tra Loai 3', 'Huong Vi Vai',7000,'Tra Cao Nguyen','Tra Loai 3','2022-03-05'),
+('MaSP04','MaDM04','Tra Loai 4',' Huong Vi Dua',8000,'Tra Thai','Tra Loai 4','2022-04-01')
+
+
+SELECT*FROM SanPham
+
+
+INSERT INTO HoaDon(MaHD,MaND,TenHD,ThoiGianHD,TrangThaiHD,DiaChiaHD,SoDienThoaiHD)
+VALUES
+('MaHD01','MaND01','TenHD01','2021-02-01','TrangThaiHD01','Me Linh - Ha Noi','0987456321'),
+('MaHD02','MaND02','TenHD02','2021-02-04','TrangThaiHD02','Cau Giay - Ha Noi','0987456321'),
+('MaHD03','MaND03','TenHD03','2021-03-05','TrangThaiHD03','Ha Dong - Ha Noi','0987456321'),
+('MaHD04','MaND04','TenHD04','2021-06-07','TrangThaiHD04','Bac Tu Liem - Ha Noi','0987456321')
+
+INSERT INTO NguoiDung(MaND,HoTenND,GioiTinhND,EmailND,SoDienThoaiND,DiaChiND)
+VALUES
+('MaND01','Pham Van Mot','Nam','phamvanmot@gmail.com','0396852471','Me Linh-Ha Noi'),
+('MaND02','Pham Van Hai','Nu','phamvanhai@gmail.com','063985741','Cau Giay-Ha Noi'),
+('MaND03','Pham Van Ba','Nam','phamvanba@gmail.com','078965423','Ha Dong-Ha Noi'),
+('MaND04','Pham Van Tu','Nu','phamvantu@gmail.com','031236454','Bac Tu Liem-Ha Noi')
+
+INSERT INTO TinTuc(MaTT,MaA,NoiDungTT,ThoiGianTT,TieuDeTT,MotaTT)
+VALUES
+('MaTT01','MaA01','NoiDungTT01','2020-01-08','Mon mo','MotaTT01'),
+('MaTT02','MaA02','NoiDungTT02','2020-04-08','Phuc Vu','MotaTT02'),
+('MaTT03','MaA03','NoiDungTT03','2020-03-08','Thuc Don','MotaTT03'),
+('MaTT04','MaA04','NoiDungTT04','2020-02-08','Hien Thuc','MotaTT04')
+
+INSERT INTO Anh(MaA,DuongDan,ThoiGianA)
+VALUES
+('MaA01','Phong Vien A','2020-01-08'),
+('MaA02','Phong Vien B','2020-02-07'),
+('MaA03','Phong Vien C','2020-03-06'),
+('MaA04','Phong Vien D','2020-04-05')
+
+
+
+INSERT INTO DanhMuc(MaDM,TenDM,MotaDM,NgayTao,TrangThaiDM)
+VALUES
+('MaDM01','Danh Muc 1','Danh Muc San Pham 1','2020-01-05','Trang Thai DM01'),
+('MaDM02','Danh Muc 2','Danh Muc San Pham 2','2020-06-04','Trang Thai DM02'),
+('MaDM03','Danh Muc 3','Danh Muc San Pham 3','2020-07-03','Trang Thai DM03'),
+('MaDM04','Danh Muc 4','Danh Muc San Pham 4','2020-08-02','Trang Thai DM04')
+
+
+SELECT*FROM DanhMuc
+
+
+INSERT INTO NguyenLieu(MaNL,MaA,MaND,TenNL,SoLuong,ChatLuong,GiaMua)
+VALUES
+('MaNL01','MaA01','MaND01','TenNL01',50000,'Loai 1',6000),
+('MaNL02','MaA02','MaND02','TenNL02',60000,'Loai 2',5000),
+('MaNL03','MaA03','MaND03','TenNL03',70000,'Loai 3',1000),
+('MaNL04','MaA04','MaND04','TenNL04',90000,'Loai 4',9000)
+
+INSERT INTO ChiTietHD(MaSP,MaHD,SoLuong)
+VALUES
+('MaSP01','MaHD01',30),
+('MaSP02','MaHD02',20),
+('MaSP03','MaHD03',50),
+('MaSP04','MaHD04',90)
+
+select *from ChiTietHD
+
+INSERT INTO BinhLuan(MaSP,MaND,NoiDungBL,TrangThaiBL)
+VALUES
+('MaSP01','MaND01','NoiDungBL01','TrangThaiBL01'),
+('MaSP02','MaND02','NoiDungBL02','TrangThaiBL02'),
+('MaSP03','MaND03','NoiDungBL03','TrangThaiBL03'),
+('MaSP04','MaND04','NoiDungBL04','TrangThaiBL04')
+
+INSERT INTO AnhSP(MaSP,MaA,TenASP)
+VALUES
+('MaSP01','MaA01','TenASP01'),
+('MaSP02','MaA02','TenASP02'),
+('MaSP03','MaA03','TenASP03'),
+('MaSP04','MaA04','TenASP04')
+
+
+
+SELECT*FROM	ChiTietHD
+SELECT*FROM BinhLuan
+SELECT*FROM HoaDon
+SELECT*FROM AnhSP
+SELECT*FROM NguoiDung
+SELECT*FROM TinTuc
+SELECT*FROM Anh
+SELECT*FROM DanhMuc
+SELECT*FROM NguyenLieu
+
+
+SELECT*FROM SanPham
+
+delete  from SanPham;
+
+

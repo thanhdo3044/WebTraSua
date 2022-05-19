@@ -1,0 +1,65 @@
+﻿@model WebTraSua.Models.TinTuc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TinTuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh.DuongDan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh.DuongDan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDungTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDungTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiGianTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiGianTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDeTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDeTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotaTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotaTT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

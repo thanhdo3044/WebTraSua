@@ -1,0 +1,32 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: white;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#bog-1 {
+	border-radius: 25px;
+}
+
+	#bog-1 > h1 {
+		font-family: Georgia;
+		font-size: 25px;
+		width: 150px;
+		margin: auto;
+		text-align: center;
+		margin-top: 50px
+	}
+
+	#bog-1 > p {
+		margin: 10px;
+		padding: 10px
+	}
+
+#bog-2 {
+	margin-left: 30px;
+	margin-right: -100px;
+}

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebTraSua.Models.AnhSP>
+
+@{
+	ViewBag.Title = "Ảnh sản phẩm";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>ẢNH SẢN PHẨM</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Create New", "Create")
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.Anh.DuongDan)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.SanPham.MaDM)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.TenASP)
+						</th>
+						<th></th>
+					</tr>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.DisplayFor(modelItem => item.Anh.DuongDan)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.SanPham.MaDM)
+							</td>
+							<td>
+								@Html.DisplayFor(modelItem => item.TenASP)
+							</td>
+							<td>
+								@Html.ActionLink("Edit", "Edit", new { maSP = item.MaSP, maA = item.MaA }) |
+								@Html.ActionLink("Details", "Details", new { maSP = item.MaSP, maA = item.MaA }) |
+								@Html.ActionLink("Delete", "Delete", new { maSP = item.MaSP, maA=item.MaA })
+							</td>
+						</tr>
+					}
+
+				</table>
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+

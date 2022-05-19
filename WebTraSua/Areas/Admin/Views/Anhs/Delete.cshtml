@@ -1,0 +1,64 @@
+﻿@model WebTraSua.Models.Anh
+
+@{
+	ViewBag.Title = "Delete";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+
+		<!-- Main content -->
+		<section class="content my-5">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+
+					<div class="row">
+						<div class="col-md-6">
+							<strong>Xóa bức ảnh</strong>
+						</div>
+						<div class="col-md-6 text-right">
+							@Html.ActionLink("Back to List", "Index")
+
+						</div>
+					</div>
+
+				</div>
+				<div class="card-body">
+					<dl class="dl-horizontal">
+						<dt>
+							@Html.DisplayNameFor(model => model.DuongDan)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.DuongDan)
+						</dd>
+
+						<dt>
+							@Html.DisplayNameFor(model => model.ThoiGianA)
+						</dt>
+
+						<dd>
+							@Html.DisplayFor(model => model.ThoiGianA)
+						</dd>
+
+					</dl>
+					<div class="form-actions no-color">
+						<input type="submit" value="Delete" class="btn btn-default" />
+					</div>
+				</div>
+			</div>
+			<!-- /.card -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+
+}

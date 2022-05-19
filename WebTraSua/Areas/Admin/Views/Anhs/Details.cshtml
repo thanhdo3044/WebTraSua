@@ -1,0 +1,60 @@
+﻿@model WebTraSua.Models.Anh
+
+@{
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+	<!-- Main content -->
+	<section class="content my-5">
+
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+
+				<div class="row">
+					<div class="col-md-6">
+						<strong>Chi tiết bức ảnh</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Back to List", "Index")
+					</div>
+				</div>
+
+			</div>
+			<div class="card-body">
+				<dl class="dl-horizontal">
+					<dt>
+						@Html.DisplayNameFor(model => model.DuongDan)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.DuongDan)
+					</dd>
+
+					<dt>
+						@Html.DisplayNameFor(model => model.ThoiGianA)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.ThoiGianA)
+					</dd>
+
+				</dl>
+			</div>
+			<p>
+				@Html.ActionLink("Edit", "Edit", new { id = Model.MaA })
+				
+			</p>
+		</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

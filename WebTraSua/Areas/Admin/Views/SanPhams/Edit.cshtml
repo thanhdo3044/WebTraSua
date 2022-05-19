@@ -1,0 +1,102 @@
+﻿@model WebTraSua.Models.SanPham
+
+@{
+	ViewBag.Title = "Edit";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+
+		<!-- Main content -->
+		<section class="content my-5">
+
+			<!-- Default box -->
+			<div class="card">
+				<div class="card-header">
+
+					<div class="row">
+						<div class="col-md-6">
+							<strong>Sửa sản phẩm</strong>
+						</div>
+						<div class="col-md-6 text-right">
+							@Html.ActionLink("Back to List", "Index")v
+						</div>
+					</div>
+
+				</div>
+				<div class="card-body">
+					@Html.HiddenFor(model => model.MaSP)
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.MaDM, "MaDM", htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.DropDownList("MaDM", null, htmlAttributes: new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.MaDM, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.MotaSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.MotaSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.MotaSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.GiaBanSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.GiaBanSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.GiaBanSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.ChiTietSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.ChiTietSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.ChiTietSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.TrangThaiSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.TrangThaiSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.TrangThaiSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.KhuyenMaiSP, htmlAttributes: new { @class = "control-label col-md-2" })
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.KhuyenMaiSP, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.KhuyenMaiSP, "", new { @class = "text-danger" })
+						</div>
+					</div>
+
+					<div class="col-md-offset-2 col-md-10">
+						<input type="submit" value="Save" class="btn btn-default" />
+					</div>
+
+				</div>
+			</div>
+			<!-- /.card -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+
+}
