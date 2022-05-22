@@ -1,4 +1,4 @@
-namespace WebTraSua.Models
+﻿namespace WebTraSua.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +10,7 @@ namespace WebTraSua.Models
     public partial class TinTuc
     {
         [Key]
+        [Required(ErrorMessage = "Mã tin tức chưa được nhập")]
         [StringLength(30)]
         public string MaTT { get; set; }
 
@@ -17,9 +18,11 @@ namespace WebTraSua.Models
         [StringLength(30)]
         public string MaA { get; set; }
 
+        [Required(ErrorMessage = "Nội dung tin tức chưa được nhập")]
         [StringLength(500)]
         public string NoiDungTT { get; set; }
 
+        [Required(ErrorMessage = "Thời gian chưa được nhập")]
         public DateTime? ThoiGianTT { get; set; }
 
         [StringLength(200)]

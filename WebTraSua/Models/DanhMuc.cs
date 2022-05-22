@@ -16,11 +16,13 @@
         }
 
         [Key]
+        [Required(ErrorMessage = "Mã danh mục chưa được nhập")]
         [StringLength(30)]
         [Display(Name = "Mã danh mục")]
         public string MaDM { get; set; }
-        
 
+
+        [Required(ErrorMessage = "Tên danh mục chưa được nhập")]
         [StringLength(200)]
         [Display(Name = "Tên danh mục")]
         public string TenDM { get; set; }
@@ -29,8 +31,9 @@
         [StringLength(200)]
         [Display(Name = "Mô tả danh mục")]
         public string MotaDM { get; set; }
-        
 
+
+        [Required(ErrorMessage = "Ngày tạo chưa được nhập")]
         [Display(Name = "Ngày tạo")]
         public DateTime? NgayTao { get; set; }
         

@@ -73,4 +73,3 @@ C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Deb
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.csproj.CopyComplete
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.dll
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.pdb
-C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.csproj.AssemblyReference.cache

@@ -18,10 +18,12 @@
         }
 
         [Key]
+        [Required(ErrorMessage = "Mã người dùng chưa được nhập")]
         [StringLength(30)]
         public string MaND { get; set; }
         [Display(Name = "Mã người dùng")]
 
+        [Required(ErrorMessage = "Họ tên người dùng chưa được nhập")]
         [StringLength(200)]
         public string HoTenND { get; set; }
         [Display(Name = "Họ tên")]
@@ -34,10 +36,12 @@
         public string EmailND { get; set; }
         [Display(Name = "Email")]
 
+        [Required(ErrorMessage = "Số điện thoại chưa được nhập")]
         [StringLength(200)]
         public string SoDienThoaiND { get; set; }
         [Display(Name = "Số điện thoại")]
 
+        [Required(ErrorMessage = "Địa chỉ chưa được nhập")]
         [StringLength(200)]
         public string DiaChiND { get; set; }
         [Display(Name = "Địa chỉ")]

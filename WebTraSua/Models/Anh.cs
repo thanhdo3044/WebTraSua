@@ -1,4 +1,4 @@
-namespace WebTraSua.Models
+﻿namespace WebTraSua.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,9 +18,11 @@ namespace WebTraSua.Models
         }
 
         [Key]
+        [Required(ErrorMessage ="Mã ảnh chưa được nhập")]
         [StringLength(30)]
         public string MaA { get; set; }
 
+        [Required(ErrorMessage = "Đường dẫn chưa được nhập")]
         [StringLength(100)]
         public string DuongDan { get; set; }
 

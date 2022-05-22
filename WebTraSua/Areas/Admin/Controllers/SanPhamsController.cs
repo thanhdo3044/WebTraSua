@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebTraSua.Models;
+using WebTraSua.DAO;
 
 namespace WebTraSua.Areas.Admin.Controllers
 {
@@ -14,10 +15,11 @@ namespace WebTraSua.Areas.Admin.Controllers
     {
         private MyDBTraSuaContext db = new MyDBTraSuaContext();
 
+        SanPhamDAO sanPhamDAO = new SanPhamDAO();
         // GET: Admin/SanPhams
         public ActionResult Index()
         {
-            return View(db.SanPhams.ToList());
+            return View(sanPhamDAO.getlist("Index"));
         }
 
         // GET: Admin/SanPhams/Details/5
@@ -27,7 +29,7 @@ namespace WebTraSua.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPhams.Find(id);
+            SanPham sanPham = sanPhamDAO.getRow(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -39,6 +41,7 @@ namespace WebTraSua.Areas.Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "TenDM");
+            ViewBag.listTrangThaiSP = new SelectList(db.SanPhams,"Trạng thái sản phẩm");
             return View();
         }
 
@@ -47,7 +50,7 @@ namespace WebTraSua.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSP,MaDM,TenSP,MotaSP,GiaBanSP,ChiTietSP,TrangThaiSP,KhuyenMaiSP")] SanPham sanPham)
+        public ActionResult Create(SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace WebTraSua.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "TenDM");
+            ViewBag.listTrangThaiSP = new SelectList(db.SanPhams,"id","Name","Trạng thái sản phẩm");
             return View(sanPham);
         }
 
@@ -65,12 +70,12 @@ namespace WebTraSua.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPhams.Find(id);
+            SanPham sanPham = sanPhamDAO.getRow(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "TenDM", sanPham.MaDM);
+            ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "TenDM");
             return View(sanPham);
         }
 
@@ -98,7 +103,7 @@ namespace WebTraSua.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPhams.Find(id);
+            SanPham sanPham = sanPhamDAO.getRow(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -111,19 +116,10 @@ namespace WebTraSua.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            SanPham sanPham = db.SanPhams.Find(id);
+            SanPham sanPham = sanPhamDAO.getRow(id);
             db.SanPhams.Remove(sanPham);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

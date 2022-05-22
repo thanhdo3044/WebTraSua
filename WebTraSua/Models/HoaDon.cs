@@ -16,6 +16,7 @@
         }
 
         [Key]
+        [Required(ErrorMessage = "Mã hóa đơn chưa được nhập")]
         [StringLength(30)]
         public string MaHD { get; set; }
         [Display(Name = "Mã hóa đơn")]
@@ -24,10 +25,12 @@
         [StringLength(30)]
         public string MaND { get; set; }
 
+        [Required(ErrorMessage = "Tên hóa đơn chưa được nhập")]
         [StringLength(200)]
         public string TenHD { get; set; }
         [Display(Name = "Tên hóa đơn")]
 
+        [Required(ErrorMessage = "Thời gian chưa được nhập")]
         public DateTime? ThoiGianHD { get; set; }
         [Display(Name = "Thời gian")]
 
@@ -35,10 +38,12 @@
         public string TrangThaiHD { get; set; }
         [Display(Name = "Trạng thái")]
 
+        [Required(ErrorMessage = "Địa chỉ chưa được nhập")]
         [StringLength(200)]
         public string DiaChiaHD { get; set; }
         [Display(Name = "Địa chỉ")]
 
+        [Required(ErrorMessage = "Số điện thoại chưa được nhập")]
         [StringLength(200)]
         public string SoDienThoaiHD { get; set; }
         [Display(Name = "Số điện thoại")]
