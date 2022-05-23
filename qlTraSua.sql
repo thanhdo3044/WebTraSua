@@ -197,4 +197,4 @@ SELECT*FROM SanPham
 
 delete  from SanPham;
 
-
+sp_rename 'SanPham.KhuyenMaiSP', 'NgayNhap', 'COLUMN';

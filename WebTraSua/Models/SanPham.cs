@@ -54,8 +54,8 @@
         [Display(Name = "Trạng thái")]
         public string TrangThaiSP { get; set; }
 
-        [Display(Name = "Khuyễn mãi")]
-        public DateTime? KhuyenMaiSP { get; set; }
+        [Display(Name = "Ngày nhập")]
+        public DateTime? NgayNhap { get; set; }
         
 
         public virtual DanhMuc DanhMuc { get; set; }

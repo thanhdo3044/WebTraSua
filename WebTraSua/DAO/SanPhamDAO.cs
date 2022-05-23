@@ -40,9 +40,8 @@ namespace WebTraSua.DAO
 			if (id == null)
 				return null;
 			else
-				return db.SanPhams.Where(m => m.TenSP == id).FirstOrDefault();
+				return db.SanPhams.Where(m => m.MaSP == id).FirstOrDefault();
 		}
-
-
+		
 	}
 }
