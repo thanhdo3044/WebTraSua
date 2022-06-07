@@ -23,13 +23,18 @@
 
 					<div class="row">
 						<div class="col-md-6">
-							<strong>Ten Danh Muc</strong>
+							<strong>Sửa danh mục</strong>
 						</div>
 						<div class="col-md-6 text-right">
-							@Html.ActionLink("Back to List", "Index")
+							<div class="col-md-6 text-right">
+								<input type="submit" value="Sửa" class="btn btn-primary" />
+								<a href="@Url.Action("Index","DanhMucs")" class="btn btn-primary">
+									<i class="fas fa-file-export"></i>
+									Về danh sách
+								</a>
+							</div>
 						</div>
 					</div>
-
 				</div>
 				<div class="card-body">
 					@Html.HiddenFor(model => model.MaDM)
@@ -64,11 +69,6 @@
 							@Html.EditorFor(model => model.TrangThaiDM, new { htmlAttributes = new { @class = "form-control" } })
 							@Html.ValidationMessageFor(model => model.TrangThaiDM, "", new { @class = "text-danger" })
 						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-md-offset-2 col-md-10">
-						<input type="submit" value="Save" class="btn btn-default" />
 					</div>
 				</div>
 			</div>

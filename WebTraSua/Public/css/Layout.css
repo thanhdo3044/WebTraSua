@@ -2,7 +2,6 @@
 	padding: 0;
 	margin: 0;
 }
-
 body {
 	background-color: black;
 	color: white;
@@ -10,8 +9,8 @@ body {
 }
 
 .icon-nav {
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height:15px;
 }
 
 .face {
@@ -19,8 +18,8 @@ body {
 }
 
 .size-sp {
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	height:auto;
 }
 
 .dropdown {
@@ -42,4 +41,35 @@ body {
 
 .dropdown:hover .dropdown-content {
 	display: block;
+}
+
+.logo-nav {
+	width: 70px;
+	height:auto;
+}
+
+.nav-col-6{
+	padding:0px;
+}
+
+.img-lyts {
+	width: 415px;
+	height: 340px;
+	background-image: url(../images/img-bog/ava-ly-tra-sua.jpg);
+	background-position:center;
+	background-repeat: no-repeat;
+}
+.img-ts {
+	width: 415px;
+	height: 340px;
+	background-image: url(../images/img-bog/tra-xanh.jpeg);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.img-bvmt {
+	width: 415px;
+	height: 340px;
+	background-image: url(../images/img-bog/combo-tui-vai-ong-hut-coc-dung.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
 }

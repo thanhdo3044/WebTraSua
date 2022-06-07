@@ -24,7 +24,8 @@
 							<strong>Xóa ảnh sản phẩm</strong>
 						</div>
 						<div class="col-md-6 text-right">
-							@Html.ActionLink("Back to List", "Index")
+							<input type="submit" value="Delete" class="btn btn-danger" />
+							<a href="@Url.Action("Index","AnhSPs")" class="btn btn-primary">Quay lại</a>
 						</div>
 					</div>
 
@@ -56,11 +57,6 @@
 						</dd>
 
 					</dl>
-
-
-					<div class="form-actions no-color">
-						<input type="submit" value="Delete" class="btn btn-default" /> |
-					</div>
 				</div>
 			</div>
 			<!-- /.card -->

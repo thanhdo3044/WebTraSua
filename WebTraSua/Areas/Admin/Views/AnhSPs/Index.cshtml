@@ -20,7 +20,11 @@
 						<strong>ẢNH SẢN PHẨM</strong>
 					</div>
 					<div class="col-md-6 text-right">
-						@Html.ActionLink("Create New", "Create")
+						<a class="btn btn-sm btn-primary" href="@Url.Action("Create","AnhSPs")">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+							</svg> Thêm
+						</a>
 					</div>
 				</div>
 
@@ -29,33 +33,42 @@
 				<table class="table table-bordered table-striped">
 					<tr>
 						<th>
-							@Html.DisplayNameFor(model => model.Anh.DuongDan)
+							@Html.DisplayNameFor(model => model.Anh.MaA)
 						</th>
 						<th>
-							@Html.DisplayNameFor(model => model.SanPham.MaDM)
+							@Html.DisplayNameFor(model => model.SanPham.MaSP)
 						</th>
 						<th>
 							@Html.DisplayNameFor(model => model.TenASP)
 						</th>
-						<th></th>
+						<th>
+							@Html.DisplayNameFor(model => model.urlimg)
+						</th>
+
+						<th>#</th>
 					</tr>
 
 					@foreach (var item in Model)
 					{
 						<tr>
 							<td>
-								@Html.DisplayFor(modelItem => item.Anh.DuongDan)
+								@Html.DisplayFor(modelItem => item.Anh.MaA)
 							</td>
 							<td>
-								@Html.DisplayFor(modelItem => item.SanPham.MaDM)
+								@Html.DisplayFor(modelItem => item.SanPham.MaSP)
 							</td>
 							<td>
 								@Html.DisplayFor(modelItem => item.TenASP)
 							</td>
 							<td>
-								@Html.ActionLink("Edit", "Edit", new { maSP = item.MaSP, maA = item.MaA }) |
-								@Html.ActionLink("Details", "Details", new { maSP = item.MaSP, maA = item.MaA }) |
-								@Html.ActionLink("Delete", "Delete", new { maSP = item.MaSP, maA=item.MaA })
+								@Html.DisplayFor(modelItem => item.urlimg)
+							</td>
+
+
+							<td>
+								<a class="btn btn-sm btn-primary" href="@Url.Action("Edit","AnhSPs", new { id = item.id })"> Sữa</a>
+								<a class="btn btn-sm btn-secondary" href="@Url.Action("Details","AnhSPs", new { id = item.id })"> Chi tiết</a>
+								<a class="btn btn-sm btn-danger" id="xoaSanPham" href="@Url.Action("Delete","AnhSPs", new { id = item.id})">Xóa</a>
 							</td>
 						</tr>
 					}
@@ -68,5 +81,3 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-

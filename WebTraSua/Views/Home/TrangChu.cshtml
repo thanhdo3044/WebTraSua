@@ -4,264 +4,273 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="main-content">
-	<img src="~/Public/images/logo/main_content.png" alt="Main-content" class="img-fluid rounded mx-auto d-block" />
-</div>
-<div class="container py-4  ">
-	<h2 class="text-center">DANH MỤC SẢN PHẨM</h2>
-	<div class="row row-cols-1 row-cols-md-6 g-4">
-		<div class="col">
-			<div class="card text-dark bg-light carousel-inner">
-				<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="card-img-top size-sp" alt="Chocolate-Toffee">
-				<div class="card-body">
-					<h5 class="card-title">Chocolate-Toffee</h5>
-					<p class="card-text">Giá : 50.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Mango-Milktea.png" class="card-img-top size-sp" alt="MangoMilkte">
-				<div class="card-body">
-					<h5 class="card-title">MangoMilkte</h5>
-					<p class="card-text">Giá : 80.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Okinawa-Milk-Foam-Smoothie.png" class="card-img-top size-sp" alt="Okinawa-Milk-Foam-Smoothie">
-				<div class="card-body">
-					<h5 class="card-title">Okinawa Milk</h5>
-					<p class="card-text">Giá : 60.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Strawberry-milk-tea.png" class="card-img-top size-sp" alt="Strawberry milk tea">
-				<div class="card-body">
-					<h5 class="card-title">Strawberry milk</h5>
-					<p class="card-text">Giá : 70.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/tra-sua-creme-brulee.png" class="card-img-top size-sp" alt="creme brulee">
-				<div class="card-body">
-					<h5 class="card-title">Creme Brulee</h5>
-					<p class="card-text">Giá : 50.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
-
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-					@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger" })
-				</div>
-			</div>
-		</div>
-
+	<div class="main-content">
+		<img src="~/Public/images/logo/main_content.png" alt="Main-content" class="img-fluid rounded mx-auto d-block" />
 	</div>
-</div>
-<div class="main-content">
-	<img src="~/Public/images/logo/main-content-2.png" alt="Main-content" class="img-fluid rounded mx-auto d-block" />
-</div>
-<div class="container py-4">
-	<h2 class="text-center">MENU HÔM NAY</h2>
-	<div class="row row-cols-1 row-cols-md-6 g-4">
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="card-img-top size-sp" alt="Chocolate-Toffee">
-				<div class="card-body">
-					<h5 class="card-title">Chocolate-Toffee</h5>
-					<p class="card-text">Giá : 50.000 VND</p>
-				</div>
-			</div>
-		</div>
+	<div class="container py-4  ">
+		<h2 class="text-center">DANH MỤC SẢN PHẨM</h2>
+		<div class="row row-cols-1 row-cols-md-6 g-4">
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Mango-Milktea.png" class="card-img-top size-sp" alt="MangoMilkte">
-				<div class="card-body">
-					<h5 class="card-title">MangoMilkte</h5>
-					<p class="card-text">Giá : 80.000 VND</p>
+			
+				<div class="col col-tt-spts ">
+					<div class="card text-dark bg-light carousel-inner">
+						<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="card-img-top size-sp" alt="Chocolate-Toffee">
+						<div class="card-body card-ts-tt">
+							<h5 class="card-title">Mango Milkte</h5>
+							<p class="card-text">Giá : 80.000 VND</p>
+							@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			
+			
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Okinawa-Milk-Foam-Smoothie.png" class="card-img-top size-sp" alt="Okinawa-Milk-Foam-Smoothie">
-				<div class="card-body">
-					<h5 class="card-title">Okinawa Milk</h5>
-					<p class="card-text">Giá : 60.000 VND</p>
-				</div>
-			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Strawberry-milk-tea.png" class="card-img-top size-sp" alt="Strawberry milk tea">
-				<div class="card-body">
-					<h5 class="card-title">Strawberry milk</h5>
-					<p class="card-text">Giá : 70.000 VND</p>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light ">
+					<img src="~/Public/images/img tea-mi/Mango-Milktea.png" class="card-img-top size-sp" alt="MangoMilkte">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Mango Milkte</h5>
+						<p class="card-text">Giá : 80.000 VND</p>
+						@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/tra-sua-creme-brulee.png" class="card-img-top size-sp" alt="creme brulee">
-				<div class="card-body">
-					<h5 class="card-title">Creme Brulee</h5>
-					<p class="card-text">Giá : 50.000 VND</p>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Okinawa-Milk-Foam-Smoothie.png" class="card-img-top size-sp" alt="Okinawa-Milk-Foam-Smoothie">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Okinawa Milk</h5>
+						<p class="card-text">Giá : 60.000 VND</p>
+						@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Strawberry-milk-tea.png" class="card-img-top size-sp" alt="Strawberry milk tea" algin:"center">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Strawberry</h5>
+						<p class="card-text">Giá : 70.000 VND</p>
+						@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card text-dark bg-light">
-				<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
-				<div class="card-body">
-					<h5 class="card-title">Tra Sua Dao</h5>
-					<p class="card-text">Giá: 40.000 VND</p>
-				</div>
-			</div>
-		</div>
 
-	</div>
-</div>
+			<div class="col col-tt-spts col-tt-spts-5">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/tra-sua-creme-brulee.png" class="card-img-top size-sp" alt="creme brulee">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Creme Brulee</h5>
+						<p class="card-text">Giá : 50.000 VND</p>
+						@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+					</div>
+				</div>
+			</div>
 
-<div class="container">
-	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-		</div>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="~/Public/images/logo/in-1.png" class="d-block w-100" alt="Sale">
+			<div class="col col-tt-spts col-tt-spts-6 ">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+						@Html.ActionLink("Mua ngay", "MuaHang", "Home", new { @class = "text-white nav-link btn btn-danger btn-tt-mh" })
+					</div>
+				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="~/Public/images/logo/main-content-2.png" class="d-block w-100" alt="...">
-			</div>
-			<div class="carousel-item">
-				<img src="~/Public/images/logo/main-content-3.png" class="d-block w-100" alt="...">
-			</div>
-		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-	</div>
-</div>
 
-<div class="container py-3">
-	<div class="row row-cols-1 row-cols-md-3 g-4 text-black">
-		<div class="col">
-			<div class="card h-100">
-				<img src="~/Public/images/img-bog/combo-tui-vai-ong-hut-coc-dung.jpg" class="card-img-top" alt="Ong hut">
-				<div class="card-body">
-					<h5 class="card-title">Ống hút bảo vệ môi trường</h5>
-					<p class="card-text">Ống hút cỏ là sản phẩm phục vụ nhu cầu sinh hoạt hàng ngày. Bởi vậy vấn đề an toàn với sức khỏe con người luôn được chú trọng hàng đầu.</p>
-					@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary" })
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card h-100">
-				<img src="~/Public/images/img-bog/tra-xanh.jpeg" class="card-img-top" style="height: 280px" alt="tea">
-				<div class="card-body">
-					<h5 class="card-title">Trà xanh vùng núi cao Tây Bắc</h5>
-					<p class="card-text">ùng núi cao Tây Bắc được thiên nhiên ban tặng cho ra nhiều đặc sản nổi tiếng, một trong những sản vật quý hiếm được khách thập</p>
-					@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary" })
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="card h-100">
-				<img src="~/Public/images/img-bog/ava-ly-tra-sua.jpg" class="img-size card-img-top" style="height: 280px" alt="Ly tra sua">
-				<div class="card-body">
-					<h5 class="card-title">Ly trà sữa từ thủy tinh</h5>
-					<p class="card-text">Có khả năng bảo vệ môi trường, cùng khả năng dữ nguyên hương vi của cốc trà sữa trong quá trình vận chuyển giúp đồ uống ngon hơn.</p>
-					@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary" })
-				</div>
-			</div>
 		</div>
 	</div>
-</div>
+	<div class="main-content">
+		<img src="~/Public/images/logo/main-content-2.png" alt="Main-content" class="img-fluid rounded mx-auto d-block" />
+	</div>
+	<div class="container py-4">
+		<h2 class="text-center">MENU HÔM NAY</h2>
+		<div class="row row-cols-1 row-cols-md-6 g-4">
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/CHOCOLATE-TOFFEE.png" class="card-img-top size-sp" alt="Chocolate-Toffee">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Chocolate-Toffee</h5>
+						<p class="card-text">Giá : 50.000 VND</p>
+					</div>
+				</div>
+			</div>
 
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Mango-Milktea.png" class="card-img-top size-sp" alt="MangoMilkte">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">MangoMilkte</h5>
+						<p class="card-text">Giá : 80.000 VND</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Okinawa-Milk-Foam-Smoothie.png" class="card-img-top size-sp" alt="Okinawa-Milk-Foam-Smoothie">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Okinawa Milk</h5>
+						<p class="card-text">Giá : 60.000 VND</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Strawberry-milk-tea.png" class="card-img-top size-sp" alt="Strawberry milk tea">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Strawberry milk</h5>
+						<p class="card-text">Giá : 70.000 VND</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/tra-sua-creme-brulee.png" class="card-img-top size-sp" alt="creme brulee">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Creme Brulee</h5>
+						<p class="card-text">Giá : 50.000 VND</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-spts">
+				<div class="card text-dark bg-light">
+					<img src="~/Public/images/img tea-mi/Tra-Sua-Dao.png" class="card-img-top size-sp" alt="Tra Sua Dao">
+					<div class="card-body card-ts-tt">
+						<h5 class="card-title">Tra Sua Dao</h5>
+						<p class="card-text">Giá: 40.000 VND</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="container aml-container">
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="~/Public/images/logo/in-1.png" class="d-block w-100" alt="Sale">
+				</div>
+				<div class="carousel-item">
+					<img src="~/Public/images/logo/main-content-2.png" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="~/Public/images/logo/main-content-3.png" class="d-block w-100" alt="...">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+
+	<div class="container py-3">
+		<div class="row row-cols-1 row-cols-md-3 g-4 text-black">
+			<div class="col col-tt-tt">
+				<div class="card h-100">
+					<div class="img-bvmt img-tt-bg-tt"></div>
+					<div class="card-body">
+						<h5 class="card-title">Ống hút bảo vệ môi trường</h5>
+						<p class="card-text">Ống hút cỏ là sản phẩm phục vụ nhu cầu sinh hoạt hàng ngày. Bởi vậy vấn đề an toàn với sức khỏe con người luôn được chú trọng hàng đầu.</p>
+						@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary btn-tk" })
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-tt">
+				<div class="card h-100">
+					<div class="img-ts img-tt-bg-tt"></div>
+					<div class="card-body">
+						<h5 class="card-title">Trà xanh vùng núi cao Tây Bắc</h5>
+						<p class="card-text">ùng núi cao Tây Bắc được thiên nhiên ban tặng cho ra nhiều đặc sản nổi tiếng, một trong những sản vật quý hiếm được khách thập</p>
+						@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary btn-tk" })
+					</div>
+				</div>
+			</div>
+			<div class="col col-tt-tt col-tt-tt-3">
+				<div class="card h-100">
+
+					<div class="img-lyts img-tt-bg-tt"></div>
+					<div class="card-body">
+						<h5 class="card-title">Ly trà sữa từ thủy tinh</h5>
+						<p class="card-text">Có khả năng bảo vệ môi trường, cùng khả năng dữ nguyên hương vi của cốc trà sữa trong quá trình vận chuyển giúp đồ uống ngon hơn.</p>
+						@Html.ActionLink("Tìm hiểu thêm tại đây", "TinTuc", "Home", new { @class = "btn btn-primary btn-tk" })
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

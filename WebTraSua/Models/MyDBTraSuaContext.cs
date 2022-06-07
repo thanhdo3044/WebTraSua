@@ -172,6 +172,8 @@ namespace WebTraSua.Models
 			modelBuilder.Entity<ChiTietHD>()
 				.Property(e => e.MaHD)
 				.IsUnicode(false);
+
+
 		}
 	}
 }

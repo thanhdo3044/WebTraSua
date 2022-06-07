@@ -113,10 +113,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Public\cssResponsive\res_Layout.css" />
+    <Content Include="Public\css\jquery.dataTables.min.css" />
     <Content Include="Public\css\Layout.css" />
     <Content Include="Public\css\LienHe.css" />
-    <Content Include="Public\css\MuaHang.css" />
     <Content Include="Public\css\SanPham.css" />
+    <Content Include="Public\css\ThanhSoluong.css" />
     <Content Include="Public\css\TinTuc.css" />
     <Content Include="Public\dist\css\adminlte.css" />
     <Content Include="Public\dist\css\adminlte.min.css" />
@@ -209,6 +211,8 @@
     <Content Include="Public\images\logo\main-content-3.png" />
     <Content Include="Public\images\logo\main_content.png" />
     <Content Include="Public\images\logo\ThanhDo-logo.png" />
+    <Content Include="Public\js\jquery.dataTables.min.css" />
+    <Content Include="Public\js\ThanhSoLuong.js" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
     <Content Include="Public\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
@@ -2064,7 +2068,6 @@
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2256,7 +2259,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Public\js\" />
+    <Folder Include="Imgage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

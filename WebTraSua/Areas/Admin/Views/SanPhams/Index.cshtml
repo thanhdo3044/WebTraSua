@@ -5,6 +5,21 @@
 	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+@section header{
+	<link href="~/Public/css/jquery.dataTables.min.css" rel="stylesheet" />
+}
+@section footer{
+	<link href="~/Public/js/jquery.dataTables.min.css" rel="stylesheet" />
+
+	<script>
+const { Doc } = require("codemirror");
+
+		$(document).ready(function () {
+			$('#myTable').DataTable();
+		});
+	</script>
+
+}
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -30,7 +45,7 @@
 
 			</div>
 			<div class="card-body">
-				<table class="table table-bordered table-striped">
+				<table class="table table-bordered table-striped " id="myTable">
 					<tr>
 						<th>
 							@Html.DisplayNameFor(model => model.MaSP)
@@ -83,7 +98,7 @@
 							<td>
 								<a class="btn btn-sm btn-primary" href="@Url.Action("Edit","SanPhams", new { id = item.MaSP })"> Sữa</a>
 								<a class="btn btn-sm btn-secondary" href="@Url.Action("Details","SanPhams", new { id = item.MaSP })"> Chi tiết</a>
-								<a class="btn btn-sm btn-danger" href="@Url.Action("Delete","SanPhams", new { id = item.MaSP })">Xóa</a>
+								<a class="btn btn-sm btn-danger" id="xoaSanPham" href="@Url.Action("Delete","SanPhams", new { id = item.MaSP})">Xóa</a>
 							</td>
 						</tr>
 					}

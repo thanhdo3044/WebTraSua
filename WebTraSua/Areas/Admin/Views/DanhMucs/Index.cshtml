@@ -22,19 +22,23 @@
 						<strong>Danh Mục</strong>
 					</div>
 					<div class="col-md-6 text-right">
-						@Html.ActionLink("Create New", "Create")
+						<a class="btn btn-sm btn-primary" href="@Url.Action("Create","DanhMucs")">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+							</svg> Thêm
+						</a>
 					</div>
 				</div>
 
 			</div>
 			<div class="card-body">
-				<table class="table">
+				<table class="table table-bordered table-striped ">
 					<tr>
 						<th>
-							@Html.DisplayNameFor(model => model.TenDM)
+							@Html.DisplayNameFor(model => model.MaDM)
 						</th>
 						<th>
-							@Html.DisplayNameFor(model => model.MotaDM)
+							@Html.DisplayNameFor(model => model.TenDM)
 						</th>
 						<th>
 							@Html.DisplayNameFor(model => model.NgayTao)
@@ -49,10 +53,10 @@
 					{
 						<tr>
 							<td>
-								@Html.DisplayFor(modelItem => item.TenDM)
+								@Html.DisplayFor(modelItem => item.MaDM)
 							</td>
 							<td>
-								@Html.DisplayFor(modelItem => item.MotaDM)
+								@Html.DisplayFor(modelItem => item.TenDM)
 							</td>
 							<td>
 								@Html.DisplayFor(modelItem => item.NgayTao)
@@ -61,9 +65,9 @@
 								@Html.DisplayFor(modelItem => item.TrangThaiDM)
 							</td>
 							<td>
-								@Html.ActionLink("Edit", "Edit", new { id = item.MaDM }) |
-								@Html.ActionLink("Details", "Details", new { id = item.MaDM }) |
-								@Html.ActionLink("Delete", "Delete", new { id = item.MaDM })
+								<a class="btn btn-sm btn-primary" href="@Url.Action("Edit","DanhMucs", new { id = item.MaDM })"> Sữa</a>
+								<a class="btn btn-sm btn-secondary" href="@Url.Action("Details","DanhMucs", new { id = item.MaDM })"> Chi tiết</a>
+								<a class="btn btn-sm btn-danger" href="@Url.Action("Delete","DanhMucs", new { id = item.MaDM })">Xóa</a>
 							</td>
 						</tr>
 					}
@@ -76,4 +80,3 @@
 	<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-

@@ -1,51 +1,71 @@
 ﻿@model WebTraSua.Models.DanhMuc
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+	ViewBag.Title = "Details";
+	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
 
-<div>
-    <h4>DanhMuc</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenDM)
-        </dt>
+	<!-- Main content -->
+	<section class="content my-5">
 
-        <dd>
-            @Html.DisplayFor(model => model.TenDM)
-        </dd>
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MotaDM)
-        </dt>
+				<div class="row">
+					<div class="col-md-6">
+						<strong>Thông tin danh mục</strong>
+					</div>
+					<div class="col-md-6 text-right">
+						@Html.ActionLink("Sửa", "Edit", new { id = Model.MaDM }, new { @class = "btn btn-primary" })
+						<a href="@Url.Action("Index","DanhMucs")" class="btn btn-primary">
+							<i class="fas fa-file-export"></i>
+							Về danh sách
+						</a>
+					</div>
+				</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MotaDM)
-        </dd>
+			</div>
+			<div class="card-body">
+				<dl class="dl-horizontal">
+					<dt>
+						@Html.DisplayNameFor(model => model.TenDM)
+					</dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NgayTao)
-        </dt>
+					<dd>
+						@Html.DisplayFor(model => model.TenDM)
+					</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NgayTao)
-        </dd>
+					<dt>
+						@Html.DisplayNameFor(model => model.MotaDM)
+					</dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TrangThaiDM)
-        </dt>
+					<dd>
+						@Html.DisplayFor(model => model.MotaDM)
+					</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TrangThaiDM)
-        </dd>
+					<dt>
+						@Html.DisplayNameFor(model => model.NgayTao)
+					</dt>
 
-    </dl>
+					<dd>
+						@Html.DisplayFor(model => model.NgayTao)
+					</dd>
+					<dt>
+						@Html.DisplayNameFor(model => model.TrangThaiDM)
+					</dt>
+
+					<dd>
+						@Html.DisplayFor(model => model.TrangThaiDM)
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- /.card -->
+	</section>
+	<!-- /.content -->
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDM }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<!-- /.content-wrapper -->

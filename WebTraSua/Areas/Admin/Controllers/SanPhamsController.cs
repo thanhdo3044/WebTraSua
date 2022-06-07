@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebTraSua.Models;
-using WebTraSua.DAO;
 using WebTraSua.Library;
 
 namespace WebTraSua.Areas.Admin.Controllers
@@ -16,11 +15,44 @@ namespace WebTraSua.Areas.Admin.Controllers
 	{
 		private MyDBTraSuaContext db = new MyDBTraSuaContext();
 
-		SanPhamDAO sanPhamDAO = new SanPhamDAO();
+
+		public List<SanPham> getlist(string sP = "D")
+		{
+			List<SanPham> ds = null;
+			switch (sP)
+			{
+				case "Y":
+					{
+						ds = db.SanPhams.Where(m => m.TenSP.Length != 0).ToList();
+						break;
+					}
+				case "N":
+					{
+						ds = db.SanPhams.Where(m => m.TenSP.Length == 0).ToList();
+						break;
+					}
+				default:
+					{
+						ds = db.SanPhams.ToList();
+						break;
+					}
+			}
+			return ds;
+		}
+		//ma tin sp
+		public SanPham getRow(string id = null)
+		{
+			if (id == null)
+				return null;
+			else
+				return db.SanPhams.Where(m => m.MaSP == id).FirstOrDefault();
+		}
+
+
 		// GET: Admin/SanPhams
 		public ActionResult Index()
 		{
-			return View(sanPhamDAO.getlist("Yes"));
+			return View(getlist("D"));
 		}
 
 		// GET: Admin/SanPhams/Details/5
@@ -30,7 +62,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			SanPham sanPham = sanPhamDAO.getRow(id);
+			SanPham sanPham = getRow(id);
 			if (sanPham == null)
 			{
 				return HttpNotFound();
@@ -59,7 +91,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 				//Xử lý thêm thông tin
 				if (sanPham.MotaSP == null)
 				{
-					sanPham.MotaSP = "khong co";
+					sanPham.MotaSP = "Null";
 					sanPham.NgayNhap = DateTime.Now;
 					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
 										XString.Str_Slug(sanPham.MaSP) + "_" +
@@ -83,7 +115,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 				return RedirectToAction("Index");
 			}
 			ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "MaDM");
-			List<string> ListTrangThai = new List<string>() { "Tốt", "Trung Bình", "Khá", "Yếu" };
+			List<string> ListTrangThai = new List<string>() { "Tốt", "Trung Bình", "Khá", "Kém" };
 			ViewBag.listTrangThaiSP = new SelectList(ListTrangThai, "TrangThaiSP");
 			return View(sanPham);
 		}
@@ -95,14 +127,14 @@ namespace WebTraSua.Areas.Admin.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			SanPham sanPham = sanPhamDAO.getRow(id);
+			SanPham sanPham = getRow(id);
 			if (sanPham == null)
 			{
 				return HttpNotFound();
 			}
 			ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "TenDM");
 			ViewBag.MaDM = new SelectList(db.DanhMucs, "MaDM", "MaDM");
-			List<string> ListTrangThai = new List<string>() { "Tốt", "Trung Bình", "Khá", "Yếu" };
+			List<string> ListTrangThai = new List<string>() { "Tốt", "Trung Bình", "Khá", "Kém" };
 			ViewBag.listTrangThaiSP = new SelectList(ListTrangThai, "TrangThaiSP");
 			return View(sanPham);
 		}
@@ -116,6 +148,28 @@ namespace WebTraSua.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				//Xử lý thêm thông tin
+				if (sanPham.MotaSP == null)
+				{
+					sanPham.MotaSP = "Null";
+					sanPham.NgayNhap = DateTime.Now;
+					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
+										XString.Str_Slug(sanPham.MaSP) + "_" +
+										XString.Str_Slug(sanPham.TenSP) + "_" +
+										sanPham.GiaBanSP + "_" +
+										XString.Str_Slug(sanPham.MotaSP) + "_" +
+										sanPham.NgayNhap;
+				}
+				else
+				{
+					sanPham.NgayNhap = DateTime.Now;
+					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
+										XString.Str_Slug(sanPham.MaSP) + "_" +
+										XString.Str_Slug(sanPham.TenSP) + "_" +
+										sanPham.GiaBanSP + "_" +
+										XString.Str_Slug(sanPham.MotaSP) + "_" +
+										sanPham.NgayNhap;
+				}
 				db.Entry(sanPham).State = EntityState.Modified;
 				db.SaveChanges();
 				return RedirectToAction("Index");
@@ -133,7 +187,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			SanPham sanPham = db.SanPhams.Find(id);
+			SanPham sanPham = db.SanPhams.Select(m => m).Where(m => m.MaSP == id).FirstOrDefault();
 			if (sanPham == null)
 			{
 				return HttpNotFound();
@@ -146,7 +200,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed(string id)
 		{
-			SanPham sanPham = db.SanPhams.Find(id);
+			SanPham sanPham = (from item in db.SanPhams where item.MaSP == id select item).FirstOrDefault();
 			db.SanPhams.Remove(sanPham);
 			db.SaveChanges();
 			return RedirectToAction("Index");

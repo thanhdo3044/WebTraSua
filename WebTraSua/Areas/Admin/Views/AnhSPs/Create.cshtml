@@ -5,10 +5,8 @@
 	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "AnhSPs", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-	@Html.AntiForgeryToken()
-	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 	<!-- Content Wrapper. Contains page content -->
 	<div class="content-wrapper">
 
@@ -18,32 +16,40 @@
 			<!-- Default box -->
 			<div class="card">
 				<div class="card-header">
-
 					<div class="row">
 						<div class="col-md-6">
 							<strong>Thêm ảnh sản phẩm</strong>
 						</div>
 						<div class="col-md-6 text-right">
-							@Html.ActionLink("Back to List", "Index")
+							<button type="submit" name="Create" class="btn btn-primary">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+									<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+								</svg>
+								Thêm ảnh sản phẩm
+							</button>
+							<a href="@Url.Action("Index","AnhSPs")" class="btn btn-primary">
+								<i class="fas fa-file-export"></i>
+								Về danh sách
+							</a>
 						</div>
 					</div>
-
 				</div>
 				<div class="card-body">
 
+					@Html.AntiForgeryToken()
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 					<div class="form-group">
-						@Html.LabelFor(model => model.MaSP, "MaSP", htmlAttributes: new { @class = "control-label col-md-2" })
+						@Html.LabelFor(model => model.SanPham.MaSP, "MaSP", htmlAttributes: new { @class = "control-label col-md-2" })
 						<div class="col-md-10">
 							@Html.DropDownList("MaSP", null, htmlAttributes: new { @class = "form-control" })
-							@Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+							@Html.ValidationMessageFor(model => model.SanPham.MaSP, "", new { @class = "text-danger" })
 						</div>
 					</div>
-
 					<div class="form-group">
-						@Html.LabelFor(model => model.MaA, "MaA", htmlAttributes: new { @class = "control-label col-md-2" })
+						@Html.LabelFor(model => model.Anh.MaA, "MaA", htmlAttributes: new { @class = "control-label col-md-2" })
 						<div class="col-md-10">
 							@Html.DropDownList("MaA", null, htmlAttributes: new { @class = "form-control" })
-							@Html.ValidationMessageFor(model => model.MaA, "", new { @class = "text-danger" })
+							@Html.ValidationMessageFor(model => model.Anh.MaA, "", new { @class = "text-danger" })
 						</div>
 					</div>
 
@@ -54,19 +60,46 @@
 							@Html.ValidationMessageFor(model => model.TenASP, "", new { @class = "text-danger" })
 						</div>
 					</div>
-
 					<div class="form-group">
-						<div class="col-md-offset-2 col-md-10">
-							<input type="submit" value="Create" class="btn btn-default" />
+						<label>Đường dẫn</label>
+						<div class="col-md-10">
+							@Html.EditorFor(model => model.urlimg, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.urlimg, "", new { @class = "text-danger" })
 						</div>
 					</div>
+					<div class="form-group">
+						<label>Image</label>
+						<div class="col-md-10">
+							@Html.TextBox("fileImage", "", new { type = "file", accept = "Imgage/*" })
+							<br />
+							<img id="preview" src="#" width="150" height="100" class="hidden" />
+
+						</div>
+					</div>
+					
 				</div>
 			</div>
 			<!-- /.card -->
 		</section>
 		<!-- /.content -->
 	</div>
-	<!-- /.content-wrapper -->
 }
 
 
+	<!-- /.content-wrapper -->
+	<script>
+		fileImage.onchange = evt => {
+
+			const [file] = fileImage.files
+
+			if (file) {
+
+				preview.src = URL.createObjectURL(file);
+
+				$("#preview").removeClass("hidden");
+
+			}
+
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

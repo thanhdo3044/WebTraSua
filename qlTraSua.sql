@@ -198,3 +198,21 @@ SELECT*FROM SanPham
 delete  from SanPham;
 
 sp_rename 'SanPham.KhuyenMaiSP', 'NgayNhap', 'COLUMN';
+
+
+SELECT*FROM AnhSP
+
+ALTER TABLE AnhSP ADD urlimg varchar(200)
+ALTER TABLE AnhSP ADD imageSP VARBINARY(max)
+
+ALTER TABLE AnhSP DROP COLUMN  imageSP 
+
+
+
+
+Select*from BinhLuan
+Select*from ChiTietHD
+Select*from HoaDon
+
+
+delete from ChiTietHD

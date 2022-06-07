@@ -1,3 +1,4 @@
+C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.csproj.CoreCompileInputs.cache
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\WebTraSua.dll.config
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\WebTraSua.dll
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\WebTraSua.pdb
@@ -69,7 +70,6 @@ C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\Sys
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\System.Web.Helpers.xml
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\System.Web.Mvc.xml
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.csproj.CoreCompileInputs.cache
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.csproj.CopyComplete
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.dll
 C:\Users\phamt\OneDrive\Documents\TAO DU AN DEMO\PhamThanhDo-2\WebTraSua\obj\Debug\WebTraSua.pdb

@@ -33,7 +33,6 @@
         public string MotaDM { get; set; }
 
 
-        [Required(ErrorMessage = "Ngày tạo chưa được nhập")]
         [Display(Name = "Ngày tạo")]
         public DateTime? NgayTao { get; set; }
         
