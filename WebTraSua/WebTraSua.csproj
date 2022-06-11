@@ -2067,10 +2067,13 @@
     <Compile Include="Areas\Admin\Controllers\NguyenLieuxController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucsController.cs" />
+    <Compile Include="Controllers\GiaoDienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Library\NgayThang.cs" />
+    <Compile Include="Library\ViewSanPham.cs" />
     <Compile Include="Library\XString.cs" />
     <Compile Include="Models\Anh.cs" />
     <Compile Include="Models\AnhSP.cs" />
@@ -2249,6 +2252,7 @@
     <Content Include="Public\plugins\summernote\summernote.js.map" />
     <Content Include="Public\plugins\summernote\summernote.min.js.map" />
     <Content Include="Public\plugins\toastr\toastr.js.map" />
+    <Content Include="Views\GiaoDien\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

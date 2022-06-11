@@ -6,6 +6,10 @@
 	Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+
+
+
+
 @using (Html.BeginForm())
 {
 	@Html.AntiForgeryToken()
@@ -56,9 +60,10 @@
 
 							<div class="form-group">
 								<label>Mô tả sản phẩm</label>
-								@Html.TextAreaFor(model => model.MotaSP, new { @class = "form-control", @rows = "5" })
+								@Html.TextAreaFor(model => model.MotaSP, new { @class = "form-control txtCK_editer", @rows = "5",@id ="ckEditor" })
 								@Html.ValidationMessageFor(model => model.MotaSP, "", new { @class = "text-danger" })
 							</div>
+							
 
 						</div>
 

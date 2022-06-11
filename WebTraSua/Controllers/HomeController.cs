@@ -18,14 +18,8 @@ namespace WebTraSua.Controllers
         // GET: Home
         public ActionResult TrangChu()
         {
-            
-            
             return View();
         }
-		
-		
-
-
 		public ActionResult SanPham()
         {
             return View();

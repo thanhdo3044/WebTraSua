@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebTraSua.Models;
 using WebTraSua.Library;
+using System.Globalization;
 
 namespace WebTraSua.Areas.Admin.Controllers
 {
@@ -88,11 +89,15 @@ namespace WebTraSua.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				// NGAY THANG
+				if (sanPham.NgayNhap == null)
+				{
+					sanPham.NgayNhap = DateTime.Now;
+				}
 				//Xử lý thêm thông tin
 				if (sanPham.MotaSP == null)
 				{
 					sanPham.MotaSP = "Null";
-					sanPham.NgayNhap = DateTime.Now;
 					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
 										XString.Str_Slug(sanPham.MaSP) + "_" +
 										XString.Str_Slug(sanPham.TenSP) + "_" +
@@ -102,7 +107,6 @@ namespace WebTraSua.Areas.Admin.Controllers
 				}
 				else
 				{
-					sanPham.NgayNhap = DateTime.Now;
 					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
 										XString.Str_Slug(sanPham.MaSP) + "_" +
 										XString.Str_Slug(sanPham.TenSP) + "_" +
@@ -148,11 +152,11 @@ namespace WebTraSua.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				
 				//Xử lý thêm thông tin
 				if (sanPham.MotaSP == null)
 				{
 					sanPham.MotaSP = "Null";
-					sanPham.NgayNhap = DateTime.Now;
 					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
 										XString.Str_Slug(sanPham.MaSP) + "_" +
 										XString.Str_Slug(sanPham.TenSP) + "_" +
@@ -162,7 +166,6 @@ namespace WebTraSua.Areas.Admin.Controllers
 				}
 				else
 				{
-					sanPham.NgayNhap = DateTime.Now;
 					sanPham.ChiTietSP = XString.Str_Slug(sanPham.MaDM) + "_" +
 										XString.Str_Slug(sanPham.MaSP) + "_" +
 										XString.Str_Slug(sanPham.TenSP) + "_" +
@@ -170,6 +173,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 										XString.Str_Slug(sanPham.MotaSP) + "_" +
 										sanPham.NgayNhap;
 				}
+
 				db.Entry(sanPham).State = EntityState.Modified;
 				db.SaveChanges();
 				return RedirectToAction("Index");
