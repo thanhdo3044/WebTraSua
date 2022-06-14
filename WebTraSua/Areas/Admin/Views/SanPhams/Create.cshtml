@@ -1,4 +1,4 @@
-﻿@model WebTraSua.Models.SanPham
+﻿@model IEnumerable<WebTraSua.Models.AnhSP>
 
 
 @{
@@ -60,10 +60,10 @@
 
 							<div class="form-group">
 								<label>Mô tả sản phẩm</label>
-								@Html.TextAreaFor(model => model.MotaSP, new { @class = "form-control txtCK_editer", @rows = "5",@id ="ckEditor" })
+								@Html.TextAreaFor(model => model.MotaSP, new { @class = "form-control", @rows = "5", @id = "moTa" })
 								@Html.ValidationMessageFor(model => model.MotaSP, "", new { @class = "text-danger" })
 							</div>
-							
+
 
 						</div>
 

@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using WebTraSua.Models;
 using WebTraSua.Library;
 using System.Globalization;
+using WebTraSua.VewModels;
+
 
 namespace WebTraSua.Areas.Admin.Controllers
 {
@@ -17,27 +19,40 @@ namespace WebTraSua.Areas.Admin.Controllers
 		private MyDBTraSuaContext db = new MyDBTraSuaContext();
 
 
-		public List<SanPham> getlist(string sP = "D")
+		public List<SanPhamVew> getlist()
 		{
-			List<SanPham> ds = null;
-			switch (sP)
+
+			List<SanPhamVew> ds = new List<SanPhamVew>();
+			var ht = (from aSP in db.AnhSPs
+					join maSP in db.SanPhams
+					on aSP.MaSP equals maSP.MaSP
+					select new
+					{
+						MaSP = maSP.MaSP,
+						MaDM = maSP.MaDM,
+						MaA = aSP.MaA,
+						urlASP = aSP.urlimg,
+						TenSP = maSP.TenSP,
+						Mota = maSP.MotaSP,
+						Gia = maSP.GiaBanSP,
+						TrangThai = maSP.TrangThaiSP,
+						NgayNhap = maSP.NgayNhap
+					}).ToList();
+			foreach(var item in ht)
 			{
-				case "Y":
-					{
-						ds = db.SanPhams.Where(m => m.TenSP.Length != 0).ToList();
-						break;
-					}
-				case "N":
-					{
-						ds = db.SanPhams.Where(m => m.TenSP.Length == 0).ToList();
-						break;
-					}
-				default:
-					{
-						ds = db.SanPhams.ToList();
-						break;
-					}
+				SanPhamVew spv = new SanPhamVew();
+				spv.MaSP = item.MaSP;
+				spv.MaDM = item.MaDM;
+				spv.MaA = item.MaA;
+				spv.urlASP = item.urlASP;
+				spv.TenSP = item.TenSP;
+				spv.MotaSP = item.Mota;
+				spv.GiaBanSP = item.Gia;
+				spv.TrangThaiSP = item.TrangThai;
+				spv.NgayNhap = item.NgayNhap;
+				ds.Add(spv);
 			}
+
 			return ds;
 		}
 		//ma tin sp
@@ -48,12 +63,13 @@ namespace WebTraSua.Areas.Admin.Controllers
 			else
 				return db.SanPhams.Where(m => m.MaSP == id).FirstOrDefault();
 		}
-
+		
 
 		// GET: Admin/SanPhams
 		public ActionResult Index()
 		{
-			return View(getlist("D"));
+			var sanPham = db.SanPhams.ToList();
+			return View(sanPham);
 		}
 
 		// GET: Admin/SanPhams/Details/5
@@ -152,7 +168,7 @@ namespace WebTraSua.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				
+
 				//Xử lý thêm thông tin
 				if (sanPham.MotaSP == null)
 				{
@@ -208,6 +224,12 @@ namespace WebTraSua.Areas.Admin.Controllers
 			db.SanPhams.Remove(sanPham);
 			db.SaveChanges();
 			return RedirectToAction("Index");
+		}
+
+		public ActionResult AnhSP(string id)
+		{
+			var anhSP = db.AnhSPs.Where(m => m.MaSP == id).ToList();
+			return View(anhSP);
 		}
 
 	}

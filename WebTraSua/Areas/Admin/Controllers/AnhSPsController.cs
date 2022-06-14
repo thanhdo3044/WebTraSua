@@ -55,25 +55,23 @@ namespace WebTraSua.Areas.Admin.Controllers
 			if (fileImage != null && fileImage.ContentLength > 0)
 			{
 				string FileName = Path.GetFileName(fileImage.FileName);
-				string path = Path.Combine(Server.MapPath("/Imgage/"), FileName);
-				anhSP.urlimg = path;
+				string path = Path.Combine(Server.MapPath("~/Imgage/"), FileName);
 				if (System.IO.File.Exists(path))
 				{
 					System.IO.File.Delete(path);
 					fileImage.SaveAs(path);
-
-
 				}
 				else
 				{
 					fileImage.SaveAs(path);
 				}
+				path = path.Substring(72, path.Length - 72);
+				anhSP.urlimg = path;
 
 			}
 
 			if (ModelState.IsValid)
 			{
-
 				db.AnhSPs.Add(anhSP);
 				db.SaveChanges();
 				return RedirectToAction("Index");

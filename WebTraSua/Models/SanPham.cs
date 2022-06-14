@@ -18,37 +18,37 @@
         }
 
         [Key]
-        [Required(ErrorMessage ="Mã sản phẩm chưa được nhập")]
+        [Required(ErrorMessage = "Mã sản phẩm chưa được nhập")]
         [StringLength(30)]
         [Display(Name = "Mã sản phẩm")]
         public string MaSP { get; set; }
-        
+
 
         [Required]
         [StringLength(30)]
         [Display(Name = "Mã danh mục")]
         public string MaDM { get; set; }
-       
 
-        [Required(ErrorMessage ="Tên sản phẩm chưa được nhập")]
+
+        [Required(ErrorMessage = "Tên sản phẩm chưa được nhập")]
         [StringLength(200)]
         [Display(Name = "Tên sản phẩm")]
         public string TenSP { get; set; }
-       
+
 
         [StringLength(500)]
         [Display(Name = "Mô tả sản phẩm")]
         public string MotaSP { get; set; }
-        
-        [Required(ErrorMessage ="Giá sản phẩm chưa được nhập")]
+
+        [Required(ErrorMessage = "Giá sản phẩm chưa được nhập")]
         [Display(Name = "Giá")]
         public int? GiaBanSP { get; set; }
-        
+
 
         [StringLength(200)]
         [Display(Name = "Chi tiết")]
         public string ChiTietSP { get; set; }
-        
+
 
         [StringLength(50)]
         [Display(Name = "Trạng thái")]
@@ -56,7 +56,7 @@
 
         [Display(Name = "Ngày nhập")]
         public DateTime? NgayNhap { get; set; }
-        
+
 
         public virtual DanhMuc DanhMuc { get; set; }
 
